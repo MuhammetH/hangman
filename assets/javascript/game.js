@@ -18,7 +18,7 @@ var game = {
 	over : false,
 	
 	initializeValues : function() {
-		this.guessesRemaining = 5; elements.guessesLeft.textContent = this.guessesRemaining;
+		this.guessesRemaining = 10; elements.guessesLeft.textContent = this.guessesRemaining;
 		elements.winsText.textContent = this.wins ;
 		this.incorrectLetters = []; elements.lettersGuessed.textContent = "none";
 		this.randomizeCurrentWord();
@@ -60,7 +60,7 @@ var game = {
 	var userGuess = event.key.toLowerCase(); // Determines which key was pressed.
 	
 	if ("abcdefghijklmnopqrstuvwxyz".includes(userGuess)) {  //then the keypress was a letter
-		if (!game.incorrectLetters.includes(userGuess) && !game.revealedWordArray.includes(userGuess)) //userGuess isn't in either lettersGuessed or revealedWordArray
+	if (!game.incorrectLetters.includes(userGuess) && !game.revealedWordArray.includes(userGuess)) //userGuess isn't in either lettersGuessed or revealedWordArray
 			{
 			var ind = getAllIndexes(game.currentWord, userGuess) ; //check if userguess is in the current word
 			if (ind.length != 0) {  //then it is in current word
@@ -68,7 +68,7 @@ var game = {
 					game.updateRevealedWordArray(ind[x], userGuess);
 				}
 				game.updateDisplayedWord();
-				if (!game.revealedWordArray.includes('_')) {
+		if (!game.revealedWordArray.includes('_')) {
 					game.wins++;
 					elements.directions.textContent = "Good Job mate!! How about this one?";
 					game.initializeValues();
