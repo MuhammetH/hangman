@@ -1,12 +1,15 @@
 header{
+    font-size: 5em;
     font-family: 'Germania One', cursive;
     color: red;
     margin-left: 20px;
+    
     
 }
 
 body{
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.5em;
     color: aqua;
     background-color: black;
     text-align: left;
