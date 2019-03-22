@@ -1,5 +1,8 @@
 header{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Germania One', cursive;
+    color: red;
+    margin-left: 20px;
+    
 }
 
 body{
@@ -7,5 +10,6 @@ body{
     color: aqua;
     background-color: black;
     text-align: left;
+    margin-left: 40px;
     
 }

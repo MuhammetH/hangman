@@ -3,19 +3,28 @@
 <head>
     <meta charset="utf-8">
     <title>Hangman Game</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Germania+One|Source+Sans+Pro:400,900i" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="../hangman/assets/css/style.css">
+
 </head>
 <body>
     <header>
-        <h1>Hangman</h1>
-        <bold><p>Press any key to get started.</p></bold>
+    <h1>Hangman</h1>
     </header>
     <div>
-        <p>Wins: <span id ="wins-text"></span></p>
-	    <p>Guesses remaining: <span id="guesses-left"></span></p>
-	    <p>Letters you guessed: <span id="letters-guessed"></span></p>
-        <p>Guess the word:<br /><span id="current-word"></span></p>
+        <h4><br>
+        <p id="directions">Press any key to get started.</p>
+        <p>Wins: <span id ="wins"></span></p>
+	    <p>Guesses remaining: <span id="guessesLeft"></span></p>
+	    <p>Incorrect letters: <span id="incorrectLetters"></span></p>
+        <p>Guess the word:<br /><span id="currentWord"></span></p>
+        <script type="text/javascript" src="../hangman/assets/javascript/game.js"></script>
+        </h4>
     </div>
 
 </body>
