@@ -3,18 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>Hangman Game</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../hangman/assets/css/style.css">
 </head>
 <body>
-    <div class="wrapper">
+    <header>
         <h1>Hangman</h1>
-        <p>USe your keyboard to guess the words.</p>
+        <bold><p>Press any key to get started.</p></bold>
+    </header>
+    <div>
+        <p>Wins: <span id ="wins-text"></span></p>
+	    <p>Guesses remaining: <span id="guesses-left"></span></p>
+	    <p>Letters you guessed: <span id="letters-guessed"></span></p>
+        <p>Guess the word:<br /><span id="current-word"></span></p>
     </div>
-    <div class="wrapper">
-        <p id= categoryName></p>
-        <div id="hold"></div>
-        <p id="myLives"></p>
-    </div>
-    
+
 </body>
 </html>
