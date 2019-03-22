@@ -9,7 +9,6 @@ var elements = {
 var game = {
 	
 	words : [ "supra","chaser","brabus","maybach","viper","pageout","audi"],
-    
 	guessesRemaining : 10,
 	wins : 0,
 	incorrectLetters : [],
