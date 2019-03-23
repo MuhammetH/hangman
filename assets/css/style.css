@@ -5,6 +5,7 @@ header{
     margin-left: 20px;
     
     
+    
 }
 
 body{
@@ -15,4 +16,14 @@ body{
     text-align: left;
     margin-left: 40px;
     
+}
+div.dotted {
+    margin: 20px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 10%;
+    border-style: dotted;
+    text-align: center;
+    border-width: 4px 4px 4px 4px;
+    border-color: purple;
 }

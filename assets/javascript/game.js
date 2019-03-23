@@ -8,7 +8,7 @@ var elements = {
 	
 var game = {
 
-    words : [ "supra","chaser","brabus","maybach","viper","pageout","audi"],
+    words : [ "supra","chaser","brabus","maybach","viper","peugeut","audi","honda", "bugatti", "volkswagen"],
     
 	guessesRemaining : 10,
 	wins : 0,
@@ -22,11 +22,11 @@ var game = {
 		elements.winsText.textContent = this.wins ;
 		this.incorrectLetters = []; elements.lettersGuessed.textContent = "none";
 		this.randomizeCurrentWord();
-		for (this.revealedWordArray = []; this.revealedWordArray.length < this.currentWord.length ; this.revealedWordArray.push('_')) {} ;
+		for (this.revealedWordArray = []; this.revealedWordArray.length < this.currentWord.length ; this.revealedWordArray.push(' _')) {} ;
 		this.updateDisplayedWord();
 	},
 	
-	updateRevealedWordArray : function(x, y) {
+	revealedWord : function(x, y) {
 	this.revealedWordArray[x] = y;
 	},
 	
@@ -56,32 +56,32 @@ var game = {
 
 	game.initializeValues();
 	document.onkeyup = function(event) {
-	if (game.over) return; // end game
-	var userGuess = event.key.toLowerCase(); // Determines which key was pressed.
+	if (game.over) return; // game over
+	var userGuess = event.key.toLowerCase(); // key press event.
 	
-	if ("abcdefghijklmnopqrstuvwxyz".includes(userGuess)) {  //then the keypress was a letter
-	if (!game.incorrectLetters.includes(userGuess) && !game.revealedWordArray.includes(userGuess)) //userGuess isn't in either lettersGuessed or revealedWordArray
+	if ("abcdefghijklmnopqrstuvwxyz".includes(userGuess)) {  //making sure user guess is a letter.
+	if (!game.incorrectLetters.includes(userGuess) && !game.revealedWordArray.includes(userGuess)) 
 			{
-			var ind = getAllIndexes(game.currentWord, userGuess) ; //check if userguess is in the current word
-			if (ind.length != 0) {  //then it is in current word
+			var ind = getAllIndexes(game.currentWord, userGuess) ; //checks if user guess is included on current word.
+			if (ind.length != 0) {  
 				for (var x = 0; x < ind.length; x++) {
-					game.updateRevealedWordArray(ind[x], userGuess);
+					game.revealedWord(ind[x], userGuess);
 				}
 				game.updateDisplayedWord();
-		if (!game.revealedWordArray.includes('_')) {
+		if (!game.revealedWordArray.includes(' _')) {
 					game.wins++;
-					elements.directions.textContent = "Good Job mate!! How about this one?";
+					elements.directions.textContent = ("Good Job mate!! How about this one?");// changes directions to this sentence.
 					game.initializeValues();
 				}
 			}
 			else {
-				game.incorrectLetters.push(userGuess); //add userGuess to letters guessed
+				game.incorrectLetters.push(userGuess); //adds the user guess to incorrect letters if it is not included on current word.
 				elements.lettersGuessed.textContent = game.incorrectLetters;
-				game.guessesRemaining--; //reduce guessesRemaining by one 
+				game.guessesRemaining--; //when user guess is wrong, guesses remaining decreases one.
 				elements.guessesLeft.textContent = game.guessesRemaining;
 				if (game.guessesRemaining < 1) {
 					elements.directions.textContent = "Oof! Good Luck next time!";
-				game.over = true; //end game
+				game.over = true; //game over!
 				}
 			}
 		}
